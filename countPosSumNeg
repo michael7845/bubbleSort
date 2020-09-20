@@ -1,0 +1,36 @@
+#include <cstdint>
+#include <string.h>
+#include <iostream>
+#include <vector>
+#include <stdio.h>
+
+//https://edabit.com/challenge/ixW8MyxCrKXjAQ6fF
+//https://i.ibb.co/m5sFBsh/image.png
+
+std::vector<int> countPosSumNeg(std::vector<int> inputArray) {
+    //first element is the count of positive numbers 
+    //second element is the sum of negative numbers.
+    
+    //If given an empty array, return an empty array: []
+    if (inputArray.size() == 0) {
+        return {};
+    }
+    std::vector<int> toReturn = {0, 0};
+    for (int i = 0; i < inputArray.size(); i++) {
+        if (inputArray[i] > 0) {
+            //positive
+            //increase count
+            toReturn[0]++;
+        }
+        else {
+            //negative
+            //increase (or decrease) sum
+            toReturn[1] += inputArray[i];
+        }
+    }
+    return toReturn;
+}
+
+int main() {
+
+}
